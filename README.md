@@ -5,14 +5,20 @@ and check its version by using
 ```
 git --version
 ```
-## download the R source files by using 
+## download the R source files by using.  
+
 
 ```git clone git@github.com:NUPulmonary/Budinger-Lab.git```
+
+make the downloaded R files as source files using. 
+
+`source("/this/is/the/directory/Budinger-Lab/dataexploration.R")`
 
 Enter into directory where edgeR result files are stored. 
 check it by using 
 
 `getwd()`
+
 
 ## do the data maniplation using these commands
 
