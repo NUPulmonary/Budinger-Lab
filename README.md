@@ -13,7 +13,9 @@ Enter into directory where are all the edgeR result files are stored chek it by 
 
 `getwd()`
 
-*DE_summary("test.edgeR.txt")*
+Get number of differentially expressed expressed.  
+
+`DE_summary("test.edgeR.txt")`
 
 result
 "for comparison :Test.htseq.edgeR.txt".    
@@ -24,19 +26,19 @@ result
 
 generate volcano plot using the edgeR results file using
 
-```Volc_plot("test.edgeR.txt")```. 
+`Volc_plot("test.edgeR.txt")`. 
 
 generate labeled volcano plot using the edgeR results file using
 
-```Volc_plot_labeled("test.edgeR.txt")```. 
+`Volc_plot_labeled("test.edgeR.txt")`. 
 
 annotate the files which has Ensembl Ids as their row names 
 
-```annotate_files("htseq_counts.txt")```.     
+`annotate_files("htseq_counts.txt")`.     
 
 get pca plot for raw counts data. 
 
-```getpca_rlog(countsdata,groupsdata,colors,output_folder_name)```
+`getpca_rlog(countsdata,groupsdata,colors,output_folder_name)`. 
 
 countsdata = dataframe with gene model and expression data. 
 groupsdata  = sample names and their group information. 
