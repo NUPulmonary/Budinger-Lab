@@ -9,7 +9,8 @@ git --version
 
 ```git clone git@github.com:NUPulmonary/Budinger-Lab.git```
 
-Enter into directory where are all the edgeR result files are stored chek it by using 
+Enter into directory where edgeR result files are stored. 
+check it by using 
 
 `getwd()`
 
@@ -17,14 +18,14 @@ Enter into directory where are all the edgeR result files are stored chek it by 
 
 Get number of differentially expressed expressed.  
 
-```DE_summary("test.edgeR.txt")```. 
+DE_summary("test.edgeR.txt")`. 
 
-`result
-"for comparison :Test.htseq.edgeR.txt".    
-"Total DE genes : 220".       
-"upregualted :131".     
-"Downregulated :89".    
-"Range of logFC: -11.29 to 4.68".`   
+    result
+    "for comparison :Test.htseq.edgeR.txt".    
+    "Total DE genes : 220".       
+    "upregualted :131".     
+    "Downregulated :89".    
+    "Range of logFC: -11.29 to 4.68".   
 
 generate volcano plot using the edgeR results file using
 
