@@ -184,6 +184,11 @@ getpca_rlog<-function(x,y,cols,outputname){
 
 
 DE_summary<-function(x){
+  if (!file.exists(x)) {
+  stop(paste("Input file doesn't exist:", x))
+  } else {
+  message(paste("Input file found:", x))
+  }
   y<-read.delim(x,header = T)
   z<-filter(y, up == 1 | dn == 1)
   print(paste0("for comparison :", x))
@@ -204,6 +209,11 @@ DE_summary<-function(x){
 
 #volcano plots -> needs an update
 Volc_plot<-function(a){
+  if (!file.exists(a)) {
+  stop(paste("Input file doesn't exist:", a))
+  } else {
+  message(paste("Input file found:", a))
+  }
 	y<-read.delim(a,header = T)
 	rownames(y)<-make.names(y$gene, unique=TRUE)
 	pdfname<-paste0("volc_",a,".pdf")
@@ -215,6 +225,11 @@ Volc_plot<-function(a){
 }
 # labelled volcano plots
 Volc_plot_labeled<-function(b){
+  if (!file.exists(b)) {
+  stop(paste("Input file doesn't exist:", b))
+  } else {
+  message(paste("Input file found:", b))
+  }
   y<-read.delim(b,header = T)
   rownames(y)<-make.names(y$gene, unique=TRUE)
   pdfname<-paste0("Labeled_Volc",b,".pdf")
@@ -226,6 +241,11 @@ Volc_plot_labeled<-function(b){
 }
 # annotate the raw counts data # mice only
 annotate_files<-function(c){
+  if (!file.exists(c)) {
+  stop(paste("Input file doesn't exist:", c))
+  } else {
+  message(paste("Input file found:", c))
+  }
   data1<-read.delim(c,header = T)
   #if (!('ENS' %like% row.names(data1))) {print("rownames of file must be ensembl ID's")}
   mart <- useMart("ensembl", dataset = "mmusculus_gene_ensembl")
