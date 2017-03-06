@@ -1,7 +1,17 @@
 # Simple scripts for basic data manipulation
 
+ensure you have git installed 
+and check its version by using 
+```
+git --version
+```
+## download the R source files by using 
 
-git clone git@github.com:NUPulmonary/Budinger-Lab.git
+`git clone git@github.com:NUPulmonary/Budinger-Lab.git`
+enter into directory where are all the edgeR files are stored
+chek it by using 
+
+`getwd()`
 
 -DE_summary("test.edgeR.txt")
 
