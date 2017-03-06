@@ -7,13 +7,13 @@ git --version
 ```
 ## download the R source files by using 
 
-`git clone git@github.com:NUPulmonary/Budinger-Lab.git`
-enter into directory where are all the edgeR files are stored
-chek it by using 
+```git clone git@github.com:NUPulmonary/Budinger-Lab.git```
+
+Enter into directory where are all the edgeR result files are stored chek it by using 
 
 `getwd()`
 
--DE_summary("test.edgeR.txt")
+*DE_summary("test.edgeR.txt")*
 
 ####result
 "for comparison :Test.htseq.edgeR.txt"
