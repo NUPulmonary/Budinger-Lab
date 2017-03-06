@@ -18,7 +18,7 @@ check it by using
 
 Get number of differentially expressed expressed.  
 
-DE_summary("test.edgeR.txt")`. 
+DE_summary("test.edgeR.txt"). 
 
     result
     "for comparison :Test.htseq.edgeR.txt".    
@@ -27,24 +27,24 @@ DE_summary("test.edgeR.txt")`.
     "Downregulated :89".    
     "Range of logFC: -11.29 to 4.68".   
 
-generate volcano plot using the edgeR results file using
+- generate volcano plot using the edgeR results file using
 
 `Volc_plot("test.edgeR.txt")`. 
 
-generate labeled volcano plot using the edgeR results file using
+- generate labeled volcano plot using the edgeR results file using
 
 `Volc_plot_labeled("test.edgeR.txt")`. 
 
-annotate the files which has Ensembl Ids as their row names 
+- annotate the files which has Ensembl Ids as their row names 
 
 `annotate_files("htseq_counts.txt")`.     
 
-get pca plot for raw counts data. 
+- get pca plot for raw counts data. 
 
 `getpca_rlog(countsdata,groupsdata,colors,output_folder_name)`. 
 
-countsdata = dataframe with gene model and expression data. 
-groupsdata  = sample names and their group information. 
+countsdata = dataframe with gene model and expression data.  
+groupsdata  = sample names and their group information.   
 colors = colors assigned to the groups.    
 i.e. colors=c("group1"=="blue","group2"=="green"). 
 output_folder_name = "PCA_results_Folder". 
