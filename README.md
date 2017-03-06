@@ -12,12 +12,16 @@ git --version
 
 make the downloaded R files as source files using. 
 
-`source("/this/is/the/directory/Budinger-Lab/dataexploration.R")`
+`source("/this/is/the/downloaded/directory/Budinger-Lab/dataexploration.R")`
 
 Enter into directory where edgeR result files are stored. 
 check it by using 
 
 `getwd()`
+
+or change it by using.  
+
+`setwd("desired/directory")`
 
 
 ## do the data maniplation using these commands
@@ -35,25 +39,25 @@ DE_summary("test.edgeR.txt").
 
 - generate volcano plot using the edgeR results file using
 
-`Volc_plot("test.edgeR.txt")`. 
+    `Volc_plot("test.edgeR.txt")`. 
 
 - generate labeled volcano plot using the edgeR results file using
 
-`Volc_plot_labeled("test.edgeR.txt")`. 
+    `Volc_plot_labeled("test.edgeR.txt")`. 
 
 - annotate the files which has Ensembl Ids as their row names 
 
-`annotate_files("htseq_counts.txt")`.     
+    `annotate_files("htseq_counts.txt")`.     
 
 - get pca plot for raw counts data. 
 
-`getpca_rlog(countsdata,groupsdata,colors,output_folder_name)`. 
+    `getpca_rlog(countsdata,groupsdata,colors,output_folder_name)`. 
 
-countsdata = dataframe with gene model and expression data.  
-groupsdata  = sample names and their group information.   
-colors = colors assigned to the groups.    
-i.e. colors=c("group1"=="blue","group2"=="green"). 
-output_folder_name = "PCA_results_Folder". 
+    countsdata = dataframe with gene model and expression data.  
+    groupsdata  = sample names and their group information.   
+    colors = colors assigned to the groups.    
+    i.e. colors=c("group1"=="blue","group2"=="green").  
+    output_folder_name = "PCA_results_Folder". 
 
 
 
