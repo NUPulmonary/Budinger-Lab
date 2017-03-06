@@ -13,16 +13,18 @@ Enter into directory where are all the edgeR result files are stored chek it by 
 
 `getwd()`
 
+## do the data maniplation using these commands
+
 Get number of differentially expressed expressed.  
 
-`DE_summary("test.edgeR.txt")`
+```DE_summary("test.edgeR.txt")```. 
 
-result
+`result
 "for comparison :Test.htseq.edgeR.txt".    
 "Total DE genes : 220".       
 "upregualted :131".     
 "Downregulated :89".    
-"Range of logFC: -11.29 to 4.68".   
+"Range of logFC: -11.29 to 4.68".`   
 
 generate volcano plot using the edgeR results file using
 
