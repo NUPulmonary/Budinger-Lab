@@ -12,7 +12,7 @@ git --version
 Enter into directory where are all the edgeR result files are stored chek it by using 
 
 `getwd()`
-
+-
 *DE_summary("test.edgeR.txt")*
 
 ####result
