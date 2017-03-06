@@ -10,7 +10,7 @@ git --version
 
 ```git clone git@github.com:NUPulmonary/Budinger-Lab.git```
 
-make the downloaded R files as source files using. 
+make the downloaded R files as source files in your R script using. 
 
 `source("/this/is/the/downloaded/directory/Budinger-Lab/dataexploration.R")`
 
@@ -24,6 +24,7 @@ or change it by using.
 `setwd("desired/directory")`
 
 
+## In the analysis.R script after giving source R files.    
 ## do the data maniplation using these commands
 
 Get number of differentially expressed expressed.  
