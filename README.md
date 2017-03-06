@@ -12,15 +12,15 @@ git --version
 Enter into directory where are all the edgeR result files are stored chek it by using 
 
 `getwd()`
--
+
 *DE_summary("test.edgeR.txt")*
 
-####result
-"for comparison :Test.htseq.edgeR.txt"
-"Total DE genes : 220"
-"upregualted :131"
-"Downregulated :89"
-"Range of logFC: -11.29 to 4.68"
+result
+"for comparison :Test.htseq.edgeR.txt".    
+"Total DE genes : 220".       
+"upregualted :131".     
+"Downregulated :89".    
+"Range of logFC: -11.29 to 4.68".   
 
 -Volc_plot("test.edgeR.txt")
 -Volc_plot_labeled("test.edgeR.txt")
