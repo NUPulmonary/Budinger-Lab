@@ -254,7 +254,7 @@ annotate_files<-function(c){
   data1$gene<-anno_mart[anno_match,'external_gene_name']
   filename1<-paste0("annotated_",c)
   data1<-data1[,c(ncol(data1),1:(ncol(data1)-1))]
-  write.table(data1, file = filename1, row.names = FALSE,sep = "\t")
+  write.table(data1, file = filename1, row.names = TRUE,sep = "\t")
 }
 
 
