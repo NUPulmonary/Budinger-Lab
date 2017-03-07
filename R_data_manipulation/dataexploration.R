@@ -1,7 +1,7 @@
 #!/usr/bin/env R
 #Title: general purpose data squashing ()
 #Version: 0.1
-#Date: 2017-03-05
+#Date: 2017-03-07
 #Author: Kishore R.Anekalla 
 source("https://bioconductor.org/biocLite.R")
 pkgs<-c("biomaRt","GenomicRanges","BiocParallel","heatmap3","genefilter","dplyr",
@@ -236,6 +236,7 @@ Volc_plot_labeled<-function(b){
   pdf(file = pdfname , bg = "white")
   with(y, plot(logFC, -log10(adj.p), pch=20, main=b, xlim=c(-10,10),ylim=c(0,150)))
   with(subset(y, (abs(logFC)>1)& adj.p< 0.05), points(logFC, -log10(adj.p), pch=20, col=ifelse((logFC < 0 & adj.p< 0.05),'blue','red')))
+  with(subset(file, adj.p<.05 & abs(logFC)>1), textxy(logFC, -log10(adj.p), labs=gene, cex=.6))
   abline(h=1.3,col="black")
   dev.off()
 }
