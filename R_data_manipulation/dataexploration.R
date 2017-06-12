@@ -6,7 +6,7 @@
 source("https://bioconductor.org/biocLite.R")
 pkgs<-c("biomaRt","GenomicRanges","BiocParallel","heatmap3","genefilter","dplyr",
         "DESeq2","edgeR","Hmisc","ggplot2","readxl","Cairo","pheatmap",
-        "gplots","calibrate","stringi","PoiClaClu")
+        "gplots","calibrate","stringi","PoiClaClu","ggrepel")
 for(i in 1:length(pkgs)){
   if(require(pkgs[i], character.only = TRUE)==FALSE){ install.packages(pkgs[i]);library(pkgs[i], character.only = TRUE)}
   else { library(pkgs[i],character.only = TRUE)}
@@ -232,6 +232,7 @@ Volc_plot_labeled<-function(b){
   }
   y<-read.delim(b,header = T)
   rownames(y)<-make.names(y$gene, unique=TRUE)
+  print(head(y))
   pdfname<-paste0("Labeled_Volc",b,".pdf")
   pdf(file = pdfname , bg = "white")
   with(y, plot(logFC, -log10(adj.p), pch=20, main=b, xlim=c(-10,10),ylim=c(0,150)))
@@ -258,6 +259,35 @@ annotate_files<-function(c){
   write.table(data1, file = filename1, row.names = TRUE,sep = "\t")
 }
 
+annotate_files_human<-function(d){
+  if (!file.exists(d)) {
+  stop(paste("Input file doesn't exist:", d))
+  } else {
+  message(paste("Input file found:", d))
+  }
+  data1<-read.delim(d,header = T)
+  #if (!('ENS' %like% row.names(data1))) {print("rownames of file must be ensembl ID's")}
+  mart <- useMart("ensembl", dataset = "hsapiens_gene_ensembl")
+  anno_mart <- getBM(mart=mart, attributes=c('ensembl_gene_id','external_gene_name','description'))
+  anno_match <- match(rownames(data1),anno_mart$ensembl_gene_id)
+  data1$gene<-anno_mart[anno_match,'external_gene_name']
+  filename1<-paste0("annotated_",d)
+  data1<-data1[,c(ncol(data1),1:(ncol(data1)-1))]
+  write.table(data1, file = filename1, row.names = TRUE,sep = "\t")
+}
 
 
+
+
+
+# still needs update
+#volcano_plotter <- function(df, title) {
+#  df %>% 
+#    mutate(Significance=ifelse(adj.p<0.05 & abs(logFC>0.25,"FDR<0.05 & log2FC>0.25",ifelse(adj.p<0.05,"FDR<0.05","Not Significant"))) %>% 
+#    mutate(Significance = factor(Significance,levels=c('Not Significant','FDR<0.05','FDR<0.05 & log2FC>0.25'))) %>% 
+#    ggplot(aes(x=logFC,y=-log10(pvalue),label=gene)) + geom_point(aes(colour=Significance)) +
+#     geom_text_repel(data=subset(df, abs(log2FoldChange) > 0.25 & padj<0.05)) +
+#     scale_colour_manual(values=c("gray","pink","darkred")) +
+#    ggtitle(paste("Volcano Plot,",title)) + theme_bw()
+#}
 
